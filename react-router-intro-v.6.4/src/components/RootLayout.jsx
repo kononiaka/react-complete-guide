@@ -1,10 +1,11 @@
 import MainNavigation from './MainNavigation';
+import { Outlet } from 'react-router-dom';
 
-function RootLayout({ children }) {
+function RootLayout() {
   return (
     <>
       <MainNavigation />
-      <main>{children}</main>
+      <main><Outlet /></main>
     </>
   );
 }
