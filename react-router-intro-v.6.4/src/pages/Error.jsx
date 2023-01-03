@@ -1,17 +1,19 @@
-import { useRouteError } from "react-router-dom";
-import MainNavigation from "../components/MainNavigation";
+import { useRouteError } from 'react-router-dom';
 
-const ErrorPage = () => {
-    const error = useRouteError();
-    return (
-        <>
-            <MainNavigation />
-            <main id="error-component">
-                <h1>An error occurred! </h1>
-                <p>{error.message}</p>
-            </main>
-        </>
-    );
-};
+import MainNavigation from '../components/MainNavigation';
+
+function ErrorPage() {
+  const error = useRouteError();
+
+  return (
+    <>
+      <MainNavigation />
+      <main id="error-content">
+        <h1>An error occurred!</h1>
+        <p>{error.statusText}</p>
+      </main>
+    </>
+  );
+}
 
 export default ErrorPage;
