@@ -12,7 +12,7 @@ function DeferredBlogPostsPage() {
       <h1>Our Blog Posts</h1>
       <Suspense fallback={<p>Loading...</p>}>
         <Await resolve={loaderData.posts} errorElement={<Error />}>
-          {(loadedPosts) => <Posts blogPosts={loadedPosts} />}
+          {(blogPosts) => <Posts blogPosts={blogPosts} />}
         </Await>
       </Suspense>
     </>
