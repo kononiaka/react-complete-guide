@@ -19,9 +19,6 @@ export const getStaticPaths = async () => {
     const meetupsCollection = db.collection("meetups");
 
     const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
-
-    client.close();
-
     return {
         fallback: false,
         paths: meetups.map((meetup) => ({ params: { meetupId: meetup._id.toString() } }))
@@ -30,6 +27,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const meetupId = context.params.meetupId;
+    // console.log(meetupId);
 
     const client = await MongoClient.connect("mongodb+srv://CondorAwful:qun3N8pruHGiC!g@cluster0.ecefcy2.mongodb.net/meetups?retryWrites=true&w=majority");
 
