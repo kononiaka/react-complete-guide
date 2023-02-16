@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-// import { useSelector } from 'react-redux';
+import { ProductsContext } from '../context/products-context';
 
 import ProductItem from '../components/Products/ProductItem';
-import { ProductsContext } from '../context/products-context';
 import './Products.css';
 
 const Products = props => {
